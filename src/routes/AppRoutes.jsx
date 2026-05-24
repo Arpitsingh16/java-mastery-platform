@@ -10,6 +10,8 @@ import ProjectsPage from '../pages/ProjectsPage'
 import ProjectPage from '../pages/ProjectPage'
 import NotesPage from '../pages/NotesPage'
 import NotFoundPage from '../pages/NotFoundPage'
+import QuizPage from '../pages/QuizPage'
+import ProjectDetailsPage from '../pages/ProjectDetailsPage'
 
 export default function AppRoutes() {
   return (
@@ -82,6 +84,16 @@ export default function AppRoutes() {
         path="*"
         element={<NotFoundPage />}
       />
+
+      <Route
+  path="/quiz/:moduleSlug"
+  element={<QuizPage />}
+/>
+
+<Route
+  path="/project-details/:slug"
+  element={<ProjectDetailsPage />}
+/>
     </Routes>
   )
 }
