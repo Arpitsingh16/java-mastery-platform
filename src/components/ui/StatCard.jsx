@@ -3,13 +3,21 @@ export default function StatCard({
   value,
 }) {
   return (
-    <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-      
-      <div className="text-sm text-slate-400">
+    <div
+      className="
+        rounded-3xl border
+        border-slate-800
+        bg-gradient-to-br
+        from-slate-900
+        to-slate-950
+        p-8
+      "
+    >
+      <div className="text-sm uppercase tracking-wide text-slate-500">
         {title}
       </div>
 
-      <div className="mt-3 text-4xl font-black text-orange-400">
+      <div className="mt-4 text-5xl font-black text-orange-400">
         {value}
       </div>
     </div>

@@ -4,11 +4,14 @@ import Navbar from '../components/layout/Navbar'
 import Sidebar from '../components/layout/Sidebar'
 import MobileSidebar from '../components/layout/MobileSidebar'
 
-export default function MainLayout({ children }) {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+export default function MainLayout({
+  children,
+}) {
+  const [sidebarOpen, setSidebarOpen] =
+    useState(false)
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
+    <div className="min-h-screen bg-[#020617] text-slate-100">
       
       <Navbar
         toggleSidebar={() =>
@@ -27,8 +30,16 @@ export default function MainLayout({ children }) {
         
         <Sidebar />
 
-        <main className="flex-1 p-6 lg:p-10">
-          {children}
+        <main
+          className="
+            min-h-[calc(100vh-64px)]
+            flex-1
+            overflow-x-hidden
+          "
+        >
+          <div className="mx-auto w-full max-w-7xl px-6 py-10 lg:px-10">
+            {children}
+          </div>
         </main>
       </div>
     </div>

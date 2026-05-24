@@ -5,25 +5,31 @@ export default function SearchBar({
   setSearch,
 }) {
   return (
-    <div className="relative w-full max-w-xl">
+    <div className="relative w-full max-w-2xl">
       
       <Search
-        className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
-        size={18}
+        className="
+          absolute left-5 top-1/2
+          -translate-y-1/2
+          text-slate-500
+        "
+        size={20}
       />
 
       <input
         type="text"
-        placeholder="Search lessons..."
+        placeholder="Search modules..."
         value={search}
         onChange={(e) =>
           setSearch(e.target.value)
         }
         className="
-          w-full rounded-2xl border border-slate-700
-          bg-slate-900 py-4 pl-12 pr-4
-          text-white outline-none
-          transition focus:border-orange-500
+          h-16 w-full rounded-2xl
+          border border-slate-800
+          bg-slate-900/80
+          pl-14 pr-6 text-lg
+          outline-none transition
+          focus:border-orange-500
         "
       />
     </div>
