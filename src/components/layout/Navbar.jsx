@@ -104,6 +104,15 @@ export default function Navbar({
 
         <ThemeToggle />
       </div>
+      <Link
+  to="/achievements"
+  className="
+    text-slate-300 transition
+    hover:text-orange-400
+  "
+>
+  Achievements
+</Link>
     </header>
   )
 }

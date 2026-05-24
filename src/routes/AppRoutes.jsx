@@ -12,6 +12,7 @@ import NotesPage from '../pages/NotesPage'
 import NotFoundPage from '../pages/NotFoundPage'
 import QuizPage from '../pages/QuizPage'
 import ProjectDetailsPage from '../pages/ProjectDetailsPage'
+import AchievementsPage from '../pages/AchievementsPage'
 
 export default function AppRoutes() {
   return (
@@ -93,6 +94,11 @@ export default function AppRoutes() {
 <Route
   path="/project-details/:slug"
   element={<ProjectDetailsPage />}
+/>
+
+<Route
+  path="/achievements"
+  element={<AchievementsPage />}
 />
     </Routes>
   )
