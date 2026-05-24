@@ -7,6 +7,7 @@ import RoadmapPage from '../pages/RoadmapPage'
 import ModulePage from '../pages/ModulePage'
 import LessonPage from '../pages/LessonPage'
 import ProjectsPage from '../pages/ProjectsPage'
+import NotesPage from '../pages/NotesPage'
 import NotFoundPage from '../pages/NotFoundPage'
 
 export default function AppRoutes() {
@@ -54,6 +55,15 @@ export default function AppRoutes() {
         element={
           <MainLayout>
             <ProjectsPage />
+          </MainLayout>
+        }
+      />
+
+      <Route
+        path="/notes"
+        element={
+          <MainLayout>
+            <NotesPage />
           </MainLayout>
         }
       />
