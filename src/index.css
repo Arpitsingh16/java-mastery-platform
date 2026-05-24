@@ -13,6 +13,9 @@ body {
 
   background-color: #020617;
   color: #f8fafc;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 * {
@@ -26,6 +29,17 @@ a {
 
 button {
   font-family: inherit;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: #ea580c;
+  color: white;
 }
 
 ::-webkit-scrollbar {
@@ -35,4 +49,8 @@ button {
 ::-webkit-scrollbar-thumb {
   background: #334155;
   border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
 }
