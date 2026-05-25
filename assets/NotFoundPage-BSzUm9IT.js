@@ -1,4 +1,4 @@
-import{r as e,s as t}from"./index-CN4LivHG.js";var n=e();function r(){return(0,n.jsxs)(`div`,{className:`\r
+import{r as e,s as t}from"./index-yzuftLcg.js";var n=e();function r(){return(0,n.jsxs)(`div`,{className:`\r
         flex min-h-[70vh]\r
         flex-col items-center\r
         justify-center text-center\r

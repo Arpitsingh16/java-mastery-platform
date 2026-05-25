@@ -1,4 +1,4 @@
-import{c as e,r as t}from"./index-CN4LivHG.js";import{t as n}from"./projects-CAiWmD3C.js";var r=t();function i({title:e,items:t}){return(0,r.jsxs)(`div`,{className:`\r
+import{c as e,r as t}from"./index-yzuftLcg.js";import{t as n}from"./projects-CAiWmD3C.js";var r=t();function i({title:e,items:t}){return(0,r.jsxs)(`div`,{className:`\r
         rounded-3xl border\r
         border-slate-800\r
         bg-slate-900/70 p-8\r

@@ -1,4 +1,4 @@
-import{h as e,r as t,s as n,u as r}from"./index-CN4LivHG.js";import{t as i}from"./projects-CAiWmD3C.js";var a=e(r(),1),o=t();function s({project:e}){return(0,o.jsxs)(n,{to:`/projects/${e.slug}`,className:`\r
+import{h as e,r as t,s as n,u as r}from"./index-yzuftLcg.js";import{t as i}from"./projects-CAiWmD3C.js";var a=e(r(),1),o=t();function s({project:e}){return(0,o.jsxs)(n,{to:`/projects/${e.slug}`,className:`\r
         group block rounded-3xl\r
         border border-slate-800\r
         bg-slate-900/70 p-8\r
