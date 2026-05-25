@@ -113,6 +113,16 @@ export default function Navbar({
 >
   Achievements
 </Link>
+
+<Link
+  to="/interview-prep"
+  className="
+    text-slate-300 transition
+    hover:text-orange-400
+  "
+>
+  Interview Prep
+</Link>
     </header>
   )
 }

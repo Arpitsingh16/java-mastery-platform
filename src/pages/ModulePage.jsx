@@ -131,7 +131,7 @@ export default function ModulePage() {
           return (
             <Link
               key={lesson.slug}
-              to={`/lesson/${lesson.slug}`}
+              to={`/lesson/${module.slug}/${lesson.slug}`}
               className="
                 block rounded-3xl border
                 border-slate-800

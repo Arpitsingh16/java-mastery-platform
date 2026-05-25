@@ -1,105 +1,209 @@
-import { Routes, Route } from 'react-router-dom'
+import {
+  Routes,
+  Route,
+} from 'react-router-dom'
+
+import {
+  lazy,
+  Suspense,
+} from 'react'
 
 import MainLayout from '../layouts/MainLayout'
 
-import HomePage from '../pages/HomePage'
-import RoadmapPage from '../pages/RoadmapPage'
-import ModulePage from '../pages/ModulePage'
-import LessonPage from '../pages/LessonPage'
-import ProjectsPage from '../pages/ProjectsPage'
-import ProjectPage from '../pages/ProjectPage'
-import NotesPage from '../pages/NotesPage'
-import NotFoundPage from '../pages/NotFoundPage'
-import QuizPage from '../pages/QuizPage'
-import ProjectDetailsPage from '../pages/ProjectDetailsPage'
-import AchievementsPage from '../pages/AchievementsPage'
+const HomePage = lazy(() =>
+  import('../pages/HomePage')
+)
+
+const RoadmapPage = lazy(() =>
+  import('../pages/RoadmapPage')
+)
+
+const ModulePage = lazy(() =>
+  import('../pages/ModulePage')
+)
+
+const LessonPage = lazy(() =>
+  import('../pages/LessonPage')
+)
+
+const ProjectsPage = lazy(() =>
+  import('../pages/ProjectsPage')
+)
+
+const ProjectPage = lazy(() =>
+  import('../pages/ProjectPage')
+)
+
+const NotesPage = lazy(() =>
+  import('../pages/NotesPage')
+)
+
+const QuizPage = lazy(() =>
+  import('../pages/QuizPage')
+)
+
+const ProjectDetailsPage = lazy(() =>
+  import('../pages/ProjectDetailsPage')
+)
+
+const AchievementsPage = lazy(() =>
+  import('../pages/AchievementsPage')
+)
+
+const NotFoundPage = lazy(() =>
+  import('../pages/NotFoundPage')
+)
+
+const InterviewPrepPage = lazy(() =>
+  import('../pages/InterviewPrepPage')
+)
+
+function Loader() {
+
+  return (
+    <div
+      className="
+        flex min-h-screen
+        items-center justify-center
+        bg-slate-950
+      "
+    >
+
+      <div
+        className="
+          h-16 w-16 animate-spin
+          rounded-full border-4
+          border-orange-500
+          border-t-transparent
+        "
+      />
+
+    </div>
+  )
+}
+
+function PageWrapper({ children }) {
+
+  return (
+    <MainLayout>
+      {children}
+    </MainLayout>
+  )
+}
 
 export default function AppRoutes() {
+
   return (
-    <Routes>
-      
-      <Route
-        path="/"
-        element={
-          <MainLayout>
-            <HomePage />
-          </MainLayout>
-        }
-      />
+    <Suspense fallback={<Loader />}>
 
-      <Route
-        path="/roadmap"
-        element={
-          <MainLayout>
-            <RoadmapPage />
-          </MainLayout>
-        }
-      />
+      <Routes>
 
-      <Route
-        path="/module/:id"
-        element={
-          <MainLayout>
-            <ModulePage />
-          </MainLayout>
-        }
-      />
+        <Route
+          path="/"
+          element={
+            <PageWrapper>
+              <HomePage />
+            </PageWrapper>
+          }
+        />
 
-      <Route
-        path="/lesson/:slug"
-        element={
-          <MainLayout>
-            <LessonPage />
-          </MainLayout>
-        }
-      />
+        <Route
+          path="/roadmap"
+          element={
+            <PageWrapper>
+              <RoadmapPage />
+            </PageWrapper>
+          }
+        />
 
-      <Route
-        path="/projects"
-        element={
-          <MainLayout>
-            <ProjectsPage />
-          </MainLayout>
-        }
-      />
+        <Route
+          path="/module/:id"
+          element={
+            <PageWrapper>
+              <ModulePage />
+            </PageWrapper>
+          }
+        />
 
-      <Route
-        path="/projects/:slug"
-        element={
-          <MainLayout>
-            <ProjectPage />
-          </MainLayout>
-        }
-      />
+        <Route
+          path="/lesson/:folder/:slug"
+          element={
+            <PageWrapper>
+              <LessonPage />
+            </PageWrapper>
+          }
+        />
 
-      <Route
-        path="/notes"
-        element={
-          <MainLayout>
-            <NotesPage />
-          </MainLayout>
-        }
-      />
+        <Route
+          path="/projects"
+          element={
+            <PageWrapper>
+              <ProjectsPage />
+            </PageWrapper>
+          }
+        />
 
-      <Route
-        path="*"
-        element={<NotFoundPage />}
-      />
+        <Route
+          path="/projects/:slug"
+          element={
+            <PageWrapper>
+              <ProjectPage />
+            </PageWrapper>
+          }
+        />
 
-      <Route
-  path="/quiz/:moduleSlug"
-  element={<QuizPage />}
-/>
+        <Route
+          path="/notes"
+          element={
+            <PageWrapper>
+              <NotesPage />
+            </PageWrapper>
+          }
+        />
 
-<Route
-  path="/project-details/:slug"
-  element={<ProjectDetailsPage />}
-/>
+        <Route
+          path="/quiz/:moduleSlug"
+          element={
+            <PageWrapper>
+              <QuizPage />
+            </PageWrapper>
+          }
+        />
 
-<Route
-  path="/achievements"
-  element={<AchievementsPage />}
-/>
-    </Routes>
+        <Route
+          path="/project-details/:slug"
+          element={
+            <PageWrapper>
+              <ProjectDetailsPage />
+            </PageWrapper>
+          }
+        />
+
+        <Route
+          path="/achievements"
+          element={
+            <PageWrapper>
+              <AchievementsPage />
+            </PageWrapper>
+          }
+        />
+
+        <Route
+          path="/interview-prep"
+          element={
+            <PageWrapper>
+              <InterviewPrepPage />
+            </PageWrapper>
+          }
+        />
+
+        <Route
+          path="*"
+          element={<NotFoundPage />}
+        />
+
+      </Routes>
+
+    </Suspense>
   )
 }
